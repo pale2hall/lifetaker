@@ -1,6 +1,5 @@
 package com.palecraft.lifetaker;
 
-import java.sql.SQLException;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -24,7 +23,7 @@ public class MyDeathListener implements Listener {
     }
 
     @EventHandler // EventPriority.NORMAL by default
-    public void boyDunDied(PlayerDeathEvent event) throws SQLException{
+    public void boyDunDied(PlayerDeathEvent event){
         int remainingLives = 0;
         Player player = event.getEntity();
         String whoDiedName = player.getName();
