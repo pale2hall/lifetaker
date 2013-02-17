@@ -1,0 +1,11 @@
+basics:
+    startwith: 10
+db:
+  mysql:
+    enable: false
+    user: "root"
+    pass: "password"
+    host: "localhost"
+    port: 3306
+    db: "minecraft"
+#Databases are not yet enabled.
