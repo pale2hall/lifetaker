@@ -27,21 +27,21 @@ public class MyDeathListener implements Listener {
         int remainingLives = 0;
         Player player = event.getEntity();
         String whoDiedName = player.getName();
-        remainingLives = this.decrementLives(whoDiedName);
+        remainingLives = this.decrementLives(whoDiedName); //Lives remaing for player who died
         event.getEntity().sendMessage(toChat("You have lost a life.  You have "+remainingLives+" left."));
 
         if (remainingLives < 1) this.outOfLives((Player)player);
 
-        if(player.getKiller() != null) { 
+        if(player.getKiller() != null) { //was killed by actual player, not evnironment 
             Entity killer = player.getKiller(); 
-            if (killer instanceof Player) {
+            if (killer instanceof Player) { //was killed by actual player, not evnironment 
                 //They were MURDERED!?!
                 Player killer_player = (Player) killer;
                 String killerName = killer_player.getName();
                 player.sendMessage(toChat(killerName+" gained your life."));
+                remainingLives = this.incrementLives(killerName);
                 killer_player.sendMessage(toChat("You gained a life from "+whoDiedName+
                         ".  You have "+remainingLives+" left."));
-                remainingLives = this.incrementLives(killerName);
             }
         }
         //Save to the file when done.

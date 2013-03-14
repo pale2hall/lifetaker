@@ -1,5 +1,11 @@
 basics:
     startwith: 10
+    gainlives: true #default true.  When false, players can only lose lives.
+#    
+#  The following features/options are placeholders.  These are not yet implimented    
+#
+    jailondeath: false #default false.  When true, players are Jailed instead of banned.
+    resetbansafter: 0 #time days that bans are reset.  
 db:
   mysql:
     enable: false
